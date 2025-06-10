@@ -1,0 +1,27 @@
+# Ignore node_modules (they will be installed in the container)
+node_modules
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS/Editor system files
+.DS_Store
+Thumbs.db
+
+# Build output (we usually rebuild in Docker)
+build
+
+# Git
+.git
+.gitignore
+
+# Docker files (you can exclude docker-compose if not needed)
+.dockerignore
+docker-compose.yml
+
+# Environment variables (don't leak secrets into image)
+.env
+.env.local
+.env.*.local
