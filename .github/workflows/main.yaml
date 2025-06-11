@@ -51,16 +51,16 @@ jobs:
         run: |
           docker push michealken30/spotify-app:${{ env.VERSION }}
 
-      # - name: Update K8s Manifests
-      #   run: |
-      #     cat deploy/deploy.yaml
-      #     sed -i "s|image: michealken30/spotify-app:.*|image: michealken30/spotify-app:${{ env.VERSION }}|g" deploy/deploy.yaml
-      #     cat deploy/deploy.yaml
+      - name: Update K8s Manifests
+        run: |
+          cat deploy/deploy.yaml
+          sed -i "s|image: michealken30/spotify-app:.*|image: michealken30/spotify-app:${{ env.VERSION }}|g" deploy/deploy.yaml
+          cat deploy/deploy.yaml
 
-      # - name: Commit the changes
-      #   run: |
-      #     git config --global user.email "<>"
-      #     git config --global user.name "GitHub Actions Bot"
-      #     git add deploy/deploy.yaml
-      #     git commit -m "Update deploy.yaml with new image version - ${{ env.VERSION }}"
-      #     git push origin main
+      - name: Commit the changes
+        run: |
+          git config --global user.email "<>"
+          git config --global user.name "GitHub Actions Bot"
+          git add deploy/deploy.yaml
+          git commit -m "Update deploy.yaml with new image version - ${{ env.VERSION }}"
+          git push origin main
