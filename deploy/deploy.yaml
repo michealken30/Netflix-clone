@@ -1,19 +1,19 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: spotify-app-deployment
-spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: spotify-app
-  template:
-    metadata:
-      labels:
-        app: spotify-app
-    spec:
-      containers:
-        - name: spotify-app
-          image: michealken30/spotify-app:v20250604224350
-          ports:
-            - containerPort: 5000
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: spotify-app-deployment
+# spec:
+#   replicas: 2
+#   selector:
+#     matchLabels:
+#       app: spotify-app
+#   template:
+#     metadata:
+#       labels:
+#         app: spotify-app
+#     spec:
+#       containers:
+#         - name: spotify-app
+#           image: michealken30/spotify-app:v20250604224350
+#           ports:
+#             - containerPort: 5000
